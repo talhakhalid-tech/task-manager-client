@@ -37,6 +37,15 @@ export default class Register extends Component {
               className="register-input-field"
               type="password"
             />
+            <label className="register-input-label" htmlFor="confirm-password">
+              CONFIRM PASSWORD
+            </label>
+            <input
+              name="confirm-password"
+              id="confirm-password"
+              className="register-input-field"
+              type="password"
+            />
             <label className="register-input-label" htmlFor="age">
               AGE
             </label>

@@ -28,7 +28,9 @@ export default class Login extends Component {
               className="login-input-field"
               type="password"
             />
-            <div className="login-login-button">SIGN IN</div>
+            <Link to="/Dashboard" className="login-login-button">
+              SIGN IN
+            </Link>
           </div>
           <div className="login-rightPanel">
             <div className="login-right-upperPart">

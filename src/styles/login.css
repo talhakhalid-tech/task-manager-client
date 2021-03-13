@@ -66,6 +66,9 @@
   align-items: center;
   cursor: pointer;
 }
+.login-login-button:hover {
+  color: white !important;
+}
 .login-rightPanel {
   width: 35%;
   display: flex;
@@ -93,7 +96,7 @@
 }
 
 .login-right-text {
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 16px;
   font-weight: 300;
   color: white;

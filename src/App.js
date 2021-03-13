@@ -3,6 +3,7 @@ import { Route, Router, Switch } from "react-router-dom";
 
 import history from "./history";
 
+import Dashboard from "./screens/Dashboard";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
 
@@ -14,6 +15,7 @@ function App() {
           <Switch>
             <Route path="/" exact component={Register} />
             <Route path="/Login" exact component={Login} />
+            <Route path="/Dashboard" exact component={Dashboard} />
           </Switch>
         </div>
       </Router>

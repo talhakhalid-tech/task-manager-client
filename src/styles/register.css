@@ -36,6 +36,7 @@
 .register-left-heading {
   font-size: 35px;
   font-weight: 600;
+  margin-bottom: 20px;
 }
 .register-input-label {
   color: #aaa;
@@ -93,7 +94,7 @@
 }
 
 .register-right-text {
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 16px;
   font-weight: 300;
   color: white;
