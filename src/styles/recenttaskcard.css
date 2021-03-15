@@ -1,0 +1,70 @@
+.recent-task-card {
+  width: 95% !important;
+  height: 65px !important;
+  /* border: 0.25px solid lightgray !important; */
+  box-shadow: 1px 1px 5px grey !important;
+  border-radius: 0.28571429rem;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+.task-heading {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+}
+.task-time {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.task-time p {
+  font-size: 13px;
+  font-weight: 400;
+  color: #555;
+}
+.task-buttons {
+  display: flex;
+  column-gap: 15px;
+}
+
+.task-buttons div {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  /* color: white; */
+  width: 100px;
+  text-align: center;
+  transition: all 0.4s linear;
+  font-weight: 500;
+  font-size: 15px;
+}
+.view-button {
+  border: 3px solid grey;
+  color: grey;
+  /* background-color: grey; */
+}
+.view-button:hover {
+  background-color: grey;
+  color: white;
+}
+.delete-button {
+  /* background-color: tomato; */
+  border: 3px solid tomato;
+  color: tomato;
+}
+.delete-button:hover {
+  background-color: tomato;
+  color: white;
+}
+.complete-button {
+  /* background-color: rgba(0, 143, 251, 0.85); */
+  border: 3px solid rgba(0, 143, 251, 0.85);
+  color: rgba(0, 143, 251, 0.85);
+}
+.complete-button:hover {
+  background-color: rgba(0, 143, 251, 0.85);
+  color: white;
+}

@@ -1,0 +1,151 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.completed-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 85% !important;
+  /* position: absolute; */
+}
+.completed-upper-segment {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.completed-upper-segment-heading {
+  font-size: 28px;
+  font-weight: 600;
+  padding: 20px;
+}
+.completed-upper-segment-right {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  color: #777;
+  font-weight: 500;
+}
+.completed-upper-segment-avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  /* right: 20px; */
+}
+.completed-middle-segment {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.completed-searchbar {
+  width: 40% !important;
+  display: flex;
+  justify-content: space-between;
+}
+.completed-searchbar-input {
+  width: 72.5% !important;
+}
+/*----------------------Filter Styling-------------------------------*/
+.completed-filter {
+  position: static;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.completed-filter-button {
+  /* width: 100%; */
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #ccc; */
+  border-radius: 3px;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.completed-filter-content {
+  /* display: none; */
+  position: absolute;
+  /* background-color: #f9f9f9; */
+  background-color: white;
+  /* z-index: 1; */
+  margin-top: 30px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 2.5px #aaa;
+  width: 50%;
+}
+.filter-period-heading {
+  font-size: 18px;
+  font-weight: 500;
+  color: #222;
+  margin-top: 15px;
+}
+.filter-period-choice::before {
+  content: "-";
+  font-weight: 500;
+  color: #444;
+  margin-right: 5px;
+}
+.filter-period-choice {
+  /* margin-left: 10px; */
+  margin: 7.5px 15px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #777;
+  cursor: pointer;
+}
+.filter-period-date-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.filter-period-date-heading {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+}
+.filter-period-date-input {
+  align-self: center;
+  width: 80%;
+  border: none;
+  outline: none;
+  box-shadow: 0.5px 0.5px 2.5px #aaa;
+  padding: 10px;
+  font-size: 17px;
+  margin: 10px 0px;
+  letter-spacing: 1px;
+}
+.filter-period-date-button {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  text-align: center;
+  margin: 10px 0px;
+  cursor: pointer;
+}
+/* .completed-filter:active .completed-filter-content {
+  display: contents;
+} */
+/*-----------------------------------------------------------*/
+.completed-remaining-text {
+  font-size: 17px;
+  font-weight: 500;
+  color: #555;
+}
+.completed-lower-segment {
+  height: 75vh !important;
+  overflow-y: scroll;
+  padding: 40px;
+}
+.completed-tasks-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+}

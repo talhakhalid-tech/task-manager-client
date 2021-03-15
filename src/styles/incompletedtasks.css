@@ -1,0 +1,62 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.incompleted-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 85% !important;
+  /* position: absolute; */
+}
+.incompleted-upper-segment {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.incompleted-upper-segment-heading {
+  font-size: 28px;
+  font-weight: 600;
+  padding: 20px;
+}
+.incompleted-upper-segment-right {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  color: #777;
+  font-weight: 500;
+}
+.incompleted-upper-segment-avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  /* right: 20px; */
+}
+.incompleted-middle-segment {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.incompleted-searchbar {
+  width: 40% !important;
+}
+.incompleted-searchbar-input {
+  width: 100% !important;
+}
+.incompleted-remaining-text {
+  font-size: 17px;
+  font-weight: 500;
+  color: #555;
+}
+.incompleted-lower-segment {
+  height: 75vh !important;
+  overflow-y: scroll;
+  padding: 40px;
+}
+.incompleted-tasks-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+}

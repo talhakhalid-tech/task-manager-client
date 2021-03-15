@@ -10,38 +10,69 @@
   width: 85% !important;
   /* position: absolute; */
 }
-.upper-segment {
+.dashboard-upper-segment {
   display: flex;
   justify-content: space-between;
+  padding: 20px;
 }
-.upper-segment-heading {
+.dashboard-upper-segment-heading {
   font-size: 30px;
   font-weight: 500;
   letter-spacing: 1.5px;
   padding: 20px;
 }
-.upper-segment-right {
+.dashboard-upper-segment-right {
   display: flex;
   align-items: center;
   column-gap: 15px;
   color: #777;
   font-weight: 500;
 }
-.upper-segment-avatar {
+.dashboard-upper-segment-avatar {
   height: 50px;
   width: 50px;
   border-radius: 5px;
   /* right: 20px; */
 }
-.middle-segment {
-  padding: 20px;
+.dashboard-middle-segment {
+  padding: 30px;
+  padding-bottom: 0px;
   display: flex;
+  justify-content: space-around;
 }
-.middle-segment-pieChart {
+.dashboard-middle-segment-pieChart {
   width: 25%;
   height: 25%;
 }
-
-.middle-segment-pieChart text {
-  color: #fff !important;
+.dashboard-middle-segment-pieChart text {
+  font-size: 14px;
 }
+.dashboard-middle-segment-pieChart .dashboard-apexcharts-title-text {
+  font-weight: 600;
+  font-size: 18px;
+}
+.dashboard-lower-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+  padding: 20px;
+  padding-top: 0px;
+}
+.dashboard-lower-segment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: start;
+}
+.dashboard-lower-segment-heading {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 20px;
+}
+/* .plus.circle.icon {
+  color: rgba(0, 143, 251, 0.85);
+  font-size: 40px;
+  cursor: pointer;
+} */

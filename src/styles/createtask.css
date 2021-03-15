@@ -1,0 +1,132 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.create-container {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 85% !important;
+}
+.create-upper-segment {
+  display: flex;
+  justify-content: space-between;
+}
+.create-upper-segment-heading {
+  font-size: 32px;
+  font-weight: 500;
+  /* letter-spacing: 1px; */
+}
+.create-upper-segment-right {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  color: #777;
+  font-weight: 500;
+}
+.create-upper-segment-avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+}
+.create-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  padding: 20px;
+}
+.create-input-area {
+  margin: 10px 0px;
+}
+.create-input-label {
+  font-size: 27px;
+  font-weight: 500;
+  color: #777;
+  padding-bottom: 15px;
+}
+.create-input {
+  font-size: 17px;
+  color: #777;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 20px;
+  width: 40%;
+  border: 0;
+  border-bottom: 2px solid #aaa;
+  border-radius: 2px;
+  outline: none;
+}
+.create-input-area textarea {
+  line-height: 4.5ch;
+  font-size: 16px;
+  color: #777;
+  background-image: linear-gradient(white, white calc(4.5ch - 2px), #aaa 1px);
+  background-size: 100% 4.5ch;
+  margin-top: 10px;
+  margin-left: 20px;
+  /* padding: 0px 10px 10px 10px; */
+  border: none;
+  resize: none;
+  outline: none;
+  width: 100%;
+}
+.create-duedate {
+  margin-left: 20px;
+  margin-top: 20px;
+  display: flex;
+  column-gap: 50px;
+}
+.create-datePick-label,
+.create-starttimepick-label,
+.create-endtimepick-label {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.rdrDefinedRangesWrapper {
+  display: none;
+}
+.rdrMonthAndYearWrapper {
+  display: none !important;
+}
+.create-timepick {
+  display: flex;
+  flex-direction: row;
+  column-gap: 150px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.create-time-input {
+  padding: 10px 20px;
+  border: 2px solid #888;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.create-button {
+  margin-top: 20px;
+  margin-left: 10px;
+  padding: 11px 10px;
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  transition: all 0.4s linear;
+  border: 3px solid #333;
+  cursor: pointer;
+}
+
+.create-button:hover {
+  background-color: white;
+  color: #333;
+  font-weight: 700;
+}

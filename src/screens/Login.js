@@ -10,24 +10,28 @@ export default class Login extends Component {
         <div className="login-segment">
           <div className="login-leftPanel">
             <div className="login-left-heading">Welcome Back!</div>
-            <label className="login-input-label" htmlFor="email">
-              EMAIL
-            </label>
-            <input
-              name="email"
-              id="email"
-              className="login-input-field"
-              type="email"
-            />
-            <label className="login-input-label" htmlFor="password">
-              PASSWORD
-            </label>
-            <input
-              name="password"
-              id="password"
-              className="login-input-field"
-              type="password"
-            />
+            <div className="login-input-area">
+              <label className="login-input-label" htmlFor="email">
+                EMAIL
+              </label>
+              <input
+                name="email"
+                id="email"
+                className="login-input-field"
+                type="email"
+              />
+            </div>
+            <div className="login-input-area">
+              <label className="login-input-label" htmlFor="password">
+                PASSWORD
+              </label>
+              <input
+                name="password"
+                id="password"
+                className="login-input-field"
+                type="password"
+              />
+            </div>
             <Link to="/Dashboard" className="login-login-button">
               SIGN IN
             </Link>

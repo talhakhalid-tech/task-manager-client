@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import "../styles/sidebar.css";
 
@@ -6,6 +7,14 @@ import defaultAvatar from "../assets/default-avatar.png";
 
 export default class Sidebar extends Component {
   render() {
+    let {
+      isDashboardActive = "",
+      isCreatetaskActive = "",
+      isIncompletedActive = "",
+      isCompletedActive = "",
+      isStarredActive = "",
+      isArchivedActive = "",
+    } = this.props;
     return (
       <div class="ui sidebar left inverted vertical visible menu">
         <div class="account-item">
@@ -14,24 +23,24 @@ export default class Sidebar extends Component {
           </div>
           <div className="avatar-title">{"{User Name}"}</div>
         </div>
-        <a class="item active">
+        <Link class={"item " + isDashboardActive} to="/Dashboard">
           <i class="block layout icon"></i>Dashboard
-        </a>
-        <a class="item">
+        </Link>
+        <Link class={"item " + isCreatetaskActive} to="/Create">
           <i class="book icon"></i>Create Task
-        </a>
-        <a class="item">
-          <i class="list icon"></i>Uncompleted Tasks
-        </a>
-        <a class="item">
+        </Link>
+        <Link class={"item " + isIncompletedActive} to="/Incomplete">
+          <i class="list icon"></i>Incomplete Tasks
+        </Link>
+        <Link class={"item " + isCompletedActive} to="/Completed">
           <i class="tasks icon"></i>Completed Tasks
-        </a>
-        <a class="item">
+        </Link>
+        <Link class={"item " + isStarredActive} to="Starred">
           <i class="star outline icon"></i>Starred Tasks
-        </a>
-        <a class="item">
+        </Link>
+        <Link class={"item " + isArchivedActive} to="Archived">
           <i class="caret square down outline icon"></i>Archived Tasks
-        </a>
+        </Link>
         <div className="copyright-text">M. Talha Khalid © 2021</div>
       </div>
     );
