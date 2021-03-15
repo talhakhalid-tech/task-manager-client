@@ -64,7 +64,7 @@ export default class completedTasks extends Component {
                   <div className="filter-period-choice">This Week Tasks</div>
                   <div className="filter-period-choice">This Month Tasks</div>
                   <div className="filter-period-heading">
-                    Filter By Date Range:
+                    Filter Using Date Range:
                   </div>
                   <div className="filter-period-date-area">
                     <div className="filter-period-date-heading">
