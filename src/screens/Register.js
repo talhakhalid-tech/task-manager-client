@@ -3,74 +3,125 @@ import { Link } from "react-router-dom";
 
 import "../styles/register.css";
 
+import AuthInputField from "../components/AuthInputField";
+
 export default class Register extends Component {
+  state = {
+    name: "",
+    nameError: null,
+    email: "",
+    emailError: null,
+    password: "",
+    passwordError: null,
+    confirmPassword: "",
+    confirmPasswordError: null,
+    age: 18,
+  };
+
+  registerHandler = () => {
+    if (this.state.name.length <= 0) {
+      this.setState({ nameError: "Name is required a field" });
+    }
+    if (
+      !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+        this.state.email
+      )
+    ) {
+      this.setState({ emailError: "Please enter a valid Email Address" });
+    }
+    if (this.state.password.length < 8) {
+      this.setState({
+        passwordError: "Password length must be minimum 8 characters",
+      });
+    }
+    if (this.state.confirmPassword !== this.state.password) {
+      this.setState({
+        confirmPasswordError: "Both passwords must match",
+      });
+    }
+  };
+
   render() {
     return (
       <div className="register-container">
         <div className="register-segment">
           <div className="register-leftPanel">
             <div className="register-left-heading">Welcome User!</div>
-            <div className="register-input-area">
-              <label className="register-input-label" htmlFor="name">
-                NAME
-              </label>
-              <input
-                name="name"
-                id="name"
-                className="register-input-field"
-                type="text"
-              />
+            <AuthInputField
+              inputFor="name"
+              inputLabel="Name"
+              inputName="name"
+              inputId="name"
+              inputType="text"
+              inputValue={this.state.name}
+              inputChangeHandler={(elem) => {
+                if (elem.target.value.length > 0)
+                  this.setState({ nameError: null });
+                this.setState({ name: elem.target.value });
+              }}
+              errorMessage={this.state.nameError}
+            />
+            <AuthInputField
+              inputFor="email"
+              inputLabel="Email Address"
+              inputName="email"
+              inputId="email"
+              inputType="email"
+              inputValue={this.state.email}
+              inputChangeHandler={(elem) => {
+                if (elem.target.value.length > 0)
+                  this.setState({ emailError: null });
+                this.setState({ email: elem.target.value });
+              }}
+              errorMessage={this.state.emailError}
+            />
+            <AuthInputField
+              inputFor="password"
+              inputLabel="Password"
+              inputName="password"
+              inputId="password"
+              inputType="password"
+              inputValue={this.state.password}
+              inputChangeHandler={(elem) => {
+                if (elem.target.value.length >= 8)
+                  this.setState({ passwordError: null });
+                this.setState({ password: elem.target.value });
+              }}
+              errorMessage={this.state.passwordError}
+            />
+            <AuthInputField
+              inputFor="confirm-password"
+              inputLabel="Confirm Password"
+              inputName="confirm-password"
+              inputId="confirm-password"
+              inputType="password"
+              inputValue={this.state.confirmPassword}
+              inputChangeHandler={(elem) => {
+                if (elem.target.value.length == this.state.password)
+                  this.setState({ confirmPasswordError: null });
+                this.setState({ confirmPassword: elem.target.value });
+              }}
+              errorMessage={this.state.confirmPasswordError}
+            />
+            <AuthInputField
+              inputFor="age"
+              inputLabel="Age"
+              inputName="age"
+              inputId="age"
+              inputType="number"
+              inputClassName="auth-input-field auth-age-input"
+              inputValue={this.state.age}
+              inputChangeHandler={(elem) =>
+                this.setState({ age: elem.target.value })
+              }
+              inputMinValue={18}
+            />
+            <div
+              className="register-register-button"
+              onClick={this.registerHandler}
+            >
+              SIGN UP
             </div>
-            <div className="register-input-area">
-              <label className="register-input-label" htmlFor="email">
-                EMAIL
-              </label>
-              <input
-                name="email"
-                id="email"
-                className="register-input-field"
-                type="email"
-              />
-            </div>
-            <div className="register-input-area">
-              <label className="register-input-label" htmlFor="password">
-                PASSWORD
-              </label>
-              <input
-                name="password"
-                id="password"
-                className="register-input-field"
-                type="password"
-              />
-            </div>
-            <div className="register-input-area">
-              <label
-                className="register-input-label"
-                htmlFor="confirm-password"
-              >
-                CONFIRM PASSWORD
-              </label>
-              <input
-                name="confirm-password"
-                id="confirm-password"
-                className="register-input-field"
-                type="password"
-              />
-            </div>
-            <div className="register-input-area">
-              <label className="register-input-label" htmlFor="age">
-                AGE
-              </label>
-              <input
-                name="age"
-                id="age"
-                className="register-input-field age-input"
-                type="number"
-                defaultValue={18}
-                min={18}
-              />
-            </div>
-            <div className="register-register-button">SIGN UP</div>
           </div>
           <div className="register-rightPanel">
             <div className="register-right-upperPart">

@@ -17,7 +17,19 @@ export default class CreateTask extends Component {
         key: "selection",
       },
     ],
+    startTime: "",
+    endTime: "",
   };
+
+  addTaskHandler = () => {
+    console.log(
+      "Start Date:" + this.state.range[0].startDate,
+      "End Date:" + this.state.range[0].endDate,
+      "Start Time:" + this.state.startTime,
+      "End Time:" + this.state.endTime
+    );
+  };
+
   render() {
     const now = new Date();
     return (
@@ -84,17 +96,33 @@ export default class CreateTask extends Component {
                   <div className="create-starttimepick-label">
                     Set Start Date Time:
                   </div>
-                  <input type="time" className="create-time-input" />
+                  <input
+                    type="time"
+                    className="create-time-input"
+                    value={this.state.startTime}
+                    onChange={(elem) =>
+                      this.setState({ startTime: elem.target.value })
+                    }
+                  />
                 </div>
                 <div className="create-endtimepick">
                   <div className="create-endtimepick-label">
                     Set End Date Time:
                   </div>
-                  <input type="time" className="create-time-input" />
+                  <input
+                    type="time"
+                    className="create-time-input"
+                    value={this.state.endTime}
+                    onChange={(elem) =>
+                      this.setState({ endTime: elem.target.value })
+                    }
+                  />
                 </div>
               </div>
             </div>
-            <div className="create-button">Add Task</div>
+            <div className="create-button" onClick={this.addTaskHandler}>
+              Add Task
+            </div>
           </div>
         </div>
       </div>

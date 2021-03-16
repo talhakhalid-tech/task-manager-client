@@ -13,7 +13,7 @@ export default class Sidebar extends Component {
       isIncompletedActive = "",
       isCompletedActive = "",
       isStarredActive = "",
-      isArchivedActive = "",
+      isDeletedActive = "",
     } = this.props;
     return (
       <div class="ui sidebar left inverted vertical visible menu">
@@ -35,11 +35,11 @@ export default class Sidebar extends Component {
         <Link class={"item " + isCompletedActive} to="/Completed">
           <i class="tasks icon"></i>Completed Tasks
         </Link>
-        <Link class={"item " + isStarredActive} to="Starred">
+        <Link class={"item " + isStarredActive} to="/Starred">
           <i class="star outline icon"></i>Starred Tasks
         </Link>
-        <Link class={"item " + isArchivedActive} to="Archived">
-          <i class="caret square down outline icon"></i>Archived Tasks
+        <Link class={"item " + isDeletedActive} to="/Deleted">
+          <i class="trash alternate outline icon"></i>Deleted Tasks
         </Link>
         <div className="copyright-text">M. Talha Khalid © 2021</div>
       </div>

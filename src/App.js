@@ -7,7 +7,7 @@ import Dashboard from "./screens/Dashboard";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
 import CreateTask from "./screens/CreateTask";
-import IncompletedTasks from "./screens/IncompletedTasks";
+import IncompleteTasks from "./screens/IncompleteTasks";
 import CompletedTasks from "./screens/CompletedTasks";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
             <Route path="/Login" exact component={Login} />
             <Route path="/Dashboard" exact component={Dashboard} />
             <Route path="/Create" exact component={CreateTask} />
-            <Route path="/Incomplete" exact component={IncompletedTasks} />
+            <Route path="/Incomplete" exact component={IncompleteTasks} />
             <Route path="/Completed" exact component={CompletedTasks} />
           </Switch>
         </div>

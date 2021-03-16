@@ -1,4 +1,4 @@
-.recent-task-card {
+.incomplete-recent-task-card {
   width: 95% !important;
   height: 65px !important;
   /* border: 0.25px solid lightgray !important; */
@@ -9,28 +9,28 @@
   padding: 10px 20px;
   justify-content: space-between;
 }
-.task-heading {
+.incomplete-task-heading {
   font-size: 20px;
   font-weight: 500;
   color: #333;
 }
-.task-time {
+.incomplete-task-time {
   font-size: 15px;
   font-weight: 600;
   color: #333;
 }
 
-.task-time p {
+.incomplete-task-time p {
   font-size: 13px;
   font-weight: 400;
   color: #555;
 }
-.task-buttons {
+.incomplete-task-buttons {
   display: flex;
   column-gap: 15px;
 }
 
-.task-buttons div {
+.incomplete-task-buttons div {
   cursor: pointer;
   padding: 5px;
   border-radius: 5px;
@@ -41,30 +41,30 @@
   font-weight: 500;
   font-size: 15px;
 }
-.view-button {
+.incomplete-view-button {
   border: 3px solid grey;
   color: grey;
   /* background-color: grey; */
 }
-.view-button:hover {
+.incomplete-view-button:hover {
   background-color: grey;
   color: white;
 }
-.delete-button {
+.incomplete-delete-button {
   /* background-color: tomato; */
   border: 3px solid tomato;
   color: tomato;
 }
-.delete-button:hover {
+.incomplete-delete-button:hover {
   background-color: tomato;
   color: white;
 }
-.complete-button {
+.incomplete-complete-button {
   /* background-color: rgba(0, 143, 251, 0.85); */
   border: 3px solid rgba(0, 143, 251, 0.85);
   color: rgba(0, 143, 251, 0.85);
 }
-.complete-button:hover {
+.incomplete-complete-button:hover {
   background-color: rgba(0, 143, 251, 0.85);
   color: white;
 }

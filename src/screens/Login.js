@@ -3,38 +3,58 @@ import { Link } from "react-router-dom";
 
 import "../styles/login.css";
 
+import AuthInputField from "../components/AuthInputField";
 export default class Login extends Component {
+  state = {
+    email: "",
+    password: "",
+    authError: null,
+  };
+
+  loginHandler = () => {
+    //auth error handling
+    this.setState({ authError: "Invalid Credentials" });
+  };
+
   render() {
     return (
       <div className="login-container">
         <div className="login-segment">
           <div className="login-leftPanel">
             <div className="login-left-heading">Welcome Back!</div>
-            <div className="login-input-area">
-              <label className="login-input-label" htmlFor="email">
-                EMAIL
-              </label>
-              <input
-                name="email"
-                id="email"
-                className="login-input-field"
-                type="email"
-              />
-            </div>
-            <div className="login-input-area">
-              <label className="login-input-label" htmlFor="password">
-                PASSWORD
-              </label>
-              <input
-                name="password"
-                id="password"
-                className="login-input-field"
-                type="password"
-              />
-            </div>
-            <Link to="/Dashboard" className="login-login-button">
+            <div className="login-auth-error">{this.state.authError}</div>
+            <AuthInputField
+              inputFor="email"
+              inputLabel="Email"
+              inputName="email"
+              inputId="email"
+              inputType="text"
+              inputValue={this.state.email}
+              inputChangeHandler={(elem) =>
+                this.setState({ email: elem.target.value })
+              }
+            />
+            <AuthInputField
+              inputFor="password"
+              inputLabel="Password"
+              inputName="password"
+              inputId="password"
+              inputType="password"
+              inputValue={this.state.password}
+              inputChangeHandler={(elem) =>
+                this.setState({ authError: null, password: elem.target.value })
+              }
+            />
+            {/* <Link to="/Dashboard" className="login-login-button">
               SIGN IN
-            </Link>
+            </Link> */}
+            <div
+              to="/Dashboard"
+              className="login-login-button"
+              onClick={this.loginHandler}
+            >
+              SIGN IN
+            </div>
           </div>
           <div className="login-rightPanel">
             <div className="login-right-upperPart">

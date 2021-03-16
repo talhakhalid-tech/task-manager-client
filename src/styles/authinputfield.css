@@ -1,0 +1,29 @@
+.auth-input-area {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.auth-input-label {
+  color: #aaa;
+  margin: 7.5px 0px 0px 0px;
+}
+.auth-input-field {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #555;
+  width: 100%;
+  height: 30px;
+  padding-bottom: 0px !important;
+  margin-top: 0px !important;
+  padding-left: 10px;
+}
+.auth-age-input {
+  width: 25%;
+  text-align: center;
+}
+.auth-input-error-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: tomato;
+  margin-top: 2px;
+}

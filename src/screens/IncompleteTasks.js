@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import "../styles/incompletedtasks.css";
+import "../styles/incompletetasks.css";
 
 import Sidebar from "../components/Sidebar";
 import defaultAvatar from "../assets/default-avatar.png";
-import RecentTaskCard from "../components/RecentTaskCard";
+import IncompleteTaskCard from "../components/IncompleteTaskCard";
 
-export default class IncompletedTasks extends Component {
+export default class IncompleteTasks extends Component {
   render() {
     return (
       <div>
@@ -40,16 +40,16 @@ export default class IncompletedTasks extends Component {
           </div>
           <div className="incompleted-lower-segment">
             <div className="incompleted-tasks-list">
-              <RecentTaskCard />
-              <RecentTaskCard />
-              <RecentTaskCard />
-              <RecentTaskCard />
-              <RecentTaskCard />
-              <RecentTaskCard />
-              <RecentTaskCard />
-              <RecentTaskCard />
-              <RecentTaskCard />
-              <RecentTaskCard />
+              <IncompleteTaskCard />
+              <IncompleteTaskCard />
+              <IncompleteTaskCard />
+              <IncompleteTaskCard />
+              <IncompleteTaskCard />
+              <IncompleteTaskCard />
+              <IncompleteTaskCard />
+              <IncompleteTaskCard />
+              <IncompleteTaskCard />
+              <IncompleteTaskCard />
             </div>
           </div>
           {/* <div class="ui top attached tabular menu">

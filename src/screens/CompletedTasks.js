@@ -3,7 +3,7 @@ import "../styles/completedtasks.css";
 
 import Sidebar from "../components/Sidebar";
 import defaultAvatar from "../assets/default-avatar.png";
-import RecentTaskCard from "../components/RecentTaskCard";
+import CompletedTaskCard from "../components/CompletedTaskCard";
 
 export default class completedTasks extends Component {
   state = { filterContentDisplay: "none" };
@@ -91,16 +91,16 @@ export default class completedTasks extends Component {
           </div>
           <div className="completed-lower-segment">
             <div className="completed-tasks-list">
-              <RecentTaskCard />
-              <RecentTaskCard />
-              <RecentTaskCard />
-              <RecentTaskCard />
-              <RecentTaskCard />
-              <RecentTaskCard />
-              <RecentTaskCard />
-              <RecentTaskCard />
-              <RecentTaskCard />
-              <RecentTaskCard />
+              <CompletedTaskCard />
+              <CompletedTaskCard />
+              <CompletedTaskCard />
+              <CompletedTaskCard />
+              <CompletedTaskCard />
+              <CompletedTaskCard />
+              <CompletedTaskCard />
+              <CompletedTaskCard />
+              <CompletedTaskCard />
+              <CompletedTaskCard />
             </div>
           </div>
         </div>

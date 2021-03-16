@@ -6,7 +6,7 @@ import "../styles/dashboard.css";
 import defaultAvatar from "../assets/default-avatar.png";
 import Sidebar from "../components/Sidebar";
 import TaskCard from "../components/TaskCard";
-import RecentTaskCard from "../components/RecentTaskCard";
+import IncompleteTaskCard from "../components/IncompleteTaskCard";
 
 export default class Dashboard extends Component {
   render() {
@@ -78,10 +78,10 @@ export default class Dashboard extends Component {
               ></i> */}
             </div>
 
-            <RecentTaskCard />
-            <RecentTaskCard />
-            <RecentTaskCard />
-            <RecentTaskCard />
+            <IncompleteTaskCard />
+            <IncompleteTaskCard />
+            <IncompleteTaskCard />
+            <IncompleteTaskCard />
           </div>
         </div>
       </div>
