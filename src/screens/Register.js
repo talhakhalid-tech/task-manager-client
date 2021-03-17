@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Modal from "react-modal";
 
 import "../styles/register.css";
 
 import AuthInputField from "../components/AuthInputField";
+import Users from "../API/Users";
+import history from "../history";
 
 export default class Register extends Component {
   state = {
@@ -16,11 +19,27 @@ export default class Register extends Component {
     confirmPassword: "",
     confirmPasswordError: null,
     age: 18,
+    modalIsOpen: false,
+    successModal: false,
+    successModalConfig: {
+      iconClass: "check circle outline icon",
+      iconColor: "#65E340",
+      modalText: "Congratulations! Successfully Signed Up",
+      buttonText: "Continue",
+    },
+    failModal: false,
+    failModalConfig: {
+      iconClass: "times circle outline icon",
+      iconColor: "tomato",
+      modalText: "Oops! An Error Occured",
+      buttonText: "Try Again",
+    },
   };
 
-  registerHandler = () => {
+  registerHandler = async () => {
     if (this.state.name.length <= 0) {
       this.setState({ nameError: "Name is required a field" });
+      return;
     }
     if (
       !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
@@ -28,20 +47,123 @@ export default class Register extends Component {
       )
     ) {
       this.setState({ emailError: "Please enter a valid Email Address" });
+      return;
     }
     if (this.state.password.length < 8) {
       this.setState({
         passwordError: "Password length must be minimum 8 characters",
       });
+      return;
     }
     if (this.state.confirmPassword !== this.state.password) {
       this.setState({
         confirmPasswordError: "Both passwords must match",
       });
+      return;
+    }
+
+    if (
+      !this.state.nameError &&
+      !this.state.emailError &&
+      !this.state.passwordError &&
+      !this.state.confirmPasswordError
+    ) {
+      try {
+        const res = await Users.post("", {
+          name: this.state.name,
+          email: this.state.email,
+          password: this.state.password,
+          age: this.state.age,
+        });
+        if (res.status === 201) {
+          this.setState({
+            name: "",
+            email: "",
+            password: "",
+            confirmPassword: "",
+            age: 18,
+            modalIsOpen: true,
+            successModal: true,
+            failModal: false,
+          });
+        }
+      } catch (e) {
+        this.setState({
+          modalIsOpen: true,
+          successModal: false,
+          failModal: true,
+        });
+      }
+    }
+  };
+
+  renderModal = ({ iconClass, iconColor, modalText, buttonText }) => {
+    return (
+      <>
+        <i
+          class={iconClass}
+          style={{
+            fontSize: "100px",
+            color: iconColor,
+            marginTop: "50px",
+          }}
+        ></i>
+        <div style={{ fontSize: "27px", color: "grey", fontWeight: "600" }}>
+          {modalText}
+        </div>
+        <div
+          style={{
+            fontSize: "22px",
+            color: "#444",
+            // border: "2px solid #444",
+            padding: "7.5px 10px",
+            borderRadius: "3px",
+            fontWeight: "600",
+            marginTop: "20px",
+            cursor: "pointer",
+          }}
+          onClick={this.closeModal}
+        >
+          {buttonText}
+        </div>
+      </>
+    );
+  };
+
+  closeModal = () => {
+    if (this.state.successModal) {
+      this.setState({
+        modalIsOpen: false,
+        successModal: false,
+      });
+      history.push("/Login");
+    } else {
+      this.setState({
+        modalIsOpen: false,
+        failModal: false,
+      });
     }
   };
 
   render() {
+    const customStyles = {
+      content: {
+        top: "50%",
+        left: "50%",
+        right: "auto",
+        bottom: "auto",
+        marginRight: "-50%",
+        transform: "translate(-50%, -50%)",
+        zIndex: 5,
+        height: "35%",
+        display: "flex",
+        justifyContent: "space-around",
+        flexDirection: "column",
+        alignItems: "center",
+        padding: "30px",
+      },
+    };
+    Modal.setAppElement("#root");
     return (
       <div className="register-container">
         <div className="register-segment">
@@ -97,7 +219,7 @@ export default class Register extends Component {
               inputType="password"
               inputValue={this.state.confirmPassword}
               inputChangeHandler={(elem) => {
-                if (elem.target.value.length == this.state.password)
+                if (elem.target.value === this.state.password)
                   this.setState({ confirmPasswordError: null });
                 this.setState({ confirmPassword: elem.target.value });
               }}
@@ -136,6 +258,18 @@ export default class Register extends Component {
             </Link>
           </div>
         </div>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Authentication Modal"
+        >
+          {this.renderModal(
+            this.state.successModal
+              ? this.state.successModalConfig
+              : this.state.failModalConfig
+          )}
+        </Modal>
       </div>
     );
   }

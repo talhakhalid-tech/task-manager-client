@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import "../styles/login.css";
-
+import Users from "../API/Users";
+import history from "../history";
 import AuthInputField from "../components/AuthInputField";
 export default class Login extends Component {
   state = {
@@ -11,9 +12,19 @@ export default class Login extends Component {
     authError: null,
   };
 
-  loginHandler = () => {
-    //auth error handling
-    this.setState({ authError: "Invalid Credentials" });
+  loginHandler = async () => {
+    try {
+      const res = await Users.post("/login", {
+        email: this.state.email,
+        password: this.state.password,
+      });
+      if (res.data.token) {
+        localStorage.setItem("auth-token", res.data.token);
+        history.push("/Dashboard");
+      }
+    } catch (e) {
+      this.setState({ authError: "Invalid Credentials!" });
+    }
   };
 
   render() {
@@ -48,11 +59,7 @@ export default class Login extends Component {
             {/* <Link to="/Dashboard" className="login-login-button">
               SIGN IN
             </Link> */}
-            <div
-              to="/Dashboard"
-              className="login-login-button"
-              onClick={this.loginHandler}
-            >
+            <div className="login-login-button" onClick={this.loginHandler}>
               SIGN IN
             </div>
           </div>
