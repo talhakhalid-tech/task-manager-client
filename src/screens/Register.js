@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Modal from "react-modal";
 
 import "../styles/register.css";
 
 import AuthInputField from "../components/AuthInputField";
 import Users from "../API/Users";
 import history from "../history";
+import AppModal from "../components/AppModal";
 
 export default class Register extends Component {
   state = {
@@ -130,7 +130,7 @@ export default class Register extends Component {
     );
   };
 
-  closeModal = () => {
+  handleCloseModal = () => {
     if (this.state.successModal) {
       this.setState({
         modalIsOpen: false,
@@ -146,24 +146,6 @@ export default class Register extends Component {
   };
 
   render() {
-    const customStyles = {
-      content: {
-        top: "50%",
-        left: "50%",
-        right: "auto",
-        bottom: "auto",
-        marginRight: "-50%",
-        transform: "translate(-50%, -50%)",
-        zIndex: 5,
-        height: "35%",
-        display: "flex",
-        justifyContent: "space-around",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: "30px",
-      },
-    };
-    Modal.setAppElement("#root");
     return (
       <div className="register-container">
         <div className="register-segment">
@@ -258,18 +240,19 @@ export default class Register extends Component {
             </Link>
           </div>
         </div>
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Authentication Modal"
-        >
-          {this.renderModal(
-            this.state.successModal
-              ? this.state.successModalConfig
-              : this.state.failModalConfig
-          )}
-        </Modal>
+        {this.state.successModal ? (
+          <AppModal
+            showModal={this.state.modalIsOpen}
+            handleCloseModal={this.handleCloseModal}
+            {...this.state.successModalConfig}
+          />
+        ) : (
+          <AppModal
+            showModal={this.state.modalIsOpen}
+            handleCloseModal={this.handleCloseModal}
+            {...this.state.failModalConfig}
+          />
+        )}
       </div>
     );
   }

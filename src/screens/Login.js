@@ -42,7 +42,7 @@ export default class Login extends Component {
               inputType="text"
               inputValue={this.state.email}
               inputChangeHandler={(elem) =>
-                this.setState({ email: elem.target.value })
+                this.setState({ authError: null, email: elem.target.value })
               }
             />
             <AuthInputField

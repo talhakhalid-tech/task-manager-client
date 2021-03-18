@@ -57,6 +57,14 @@
   border-radius: 2px;
   outline: none;
 }
+.create-input-error {
+  font-size: 15px;
+  color: tomato;
+  font-weight: 400;
+  margin-left: 20px;
+  margin-bottom: -20px;
+  margin-top: 3.5px;
+}
 .create-input-area textarea {
   line-height: 4.5ch;
   font-size: 16px;
@@ -123,6 +131,7 @@
   transition: all 0.4s linear;
   border: 3px solid #333;
   cursor: pointer;
+  /* align-self: stretch; */
 }
 
 .create-button:hover {
